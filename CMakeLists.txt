@@ -10,4 +10,28 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED on)
 set(CMAKE_CXX_EXTENSIONS off)
 
-find_package(Boost 1.63 REQUIRED COMPONENTS program_options)
+################################################################################
+# Third-party libraries
+################################################################################
+
+find_package(Boost 1.63 REQUIRED COMPONENTS program_options date_time)
+find_package(GTest REQUIRED)
+
+################################################################################
+# CMake configuration
+################################################################################
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+################################################################################
+# Project's libraries names
+################################################################################
+
+set(DATA_TYPES_LIB ${PROJECT_NAME}DataTypes)
+
+################################################################################
+# Configuring cmake
+################################################################################
+
+add_subdirectory(src)
+add_subdirectory(test)
