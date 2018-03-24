@@ -22,12 +22,14 @@ find_package(GTest REQUIRED)
 ################################################################################
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
 ################################################################################
 # Project's libraries names
 ################################################################################
 
 set(DATA_TYPES_LIB ${PROJECT_NAME}DataTypes)
+set(DATA_VALIDATION_LIB ${PROJECT_NAME}DataValidation)
 
 ################################################################################
 # Configuring cmake
