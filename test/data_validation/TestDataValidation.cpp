@@ -18,7 +18,8 @@ const AccountId correct_id{111};
 const date correct_last_payment_date{2018, Feb, 25};
 const SubscriberAccountInfo correct_acc_info{correct_id,
                                              correct_number,
-                                             correct_last_payment_date};
+                                             correct_last_payment_date,
+                                             30};
 
 const CallInfo correct_call_info{
     correct_id,

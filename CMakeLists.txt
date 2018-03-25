@@ -14,7 +14,7 @@ set(CMAKE_CXX_EXTENSIONS off)
 # Third-party libraries
 ################################################################################
 
-find_package(Boost 1.63 REQUIRED COMPONENTS program_options date_time)
+find_package(Boost 1.63 REQUIRED COMPONENTS program_options date_time filesystem)
 find_package(GTest REQUIRED)
 
 ################################################################################
@@ -31,6 +31,8 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(DATA_TYPES_LIB ${PROJECT_NAME}DataTypes)
 set(DATA_VALIDATION_LIB ${PROJECT_NAME}DataValidation)
 set(UTILS_LIB ${PROJECT_NAME}Utils)
+set(FEE_CALCULATION_LIB ${PROJECT_NAME}FeeCalculation)
+set(MAIN_APPLICATION_CONTROLLER_LIB ${PROJECT_NAME}MainApplicationController)
 
 ################################################################################
 # Configuring cmake

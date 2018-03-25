@@ -25,5 +25,6 @@ BOOST_FUSION_DEFINE_STRUCT(
     (MobileBillingSystem::DataTypes::AccountId, account_id)
     (MobileBillingSystem::DataTypes::PhoneNumber, phone_number)
     (boost::gregorian::date, last_payment_date)
+    (std::size_t, free_minutes_left)
     )
 // clang-format on

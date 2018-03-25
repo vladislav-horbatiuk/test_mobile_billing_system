@@ -24,10 +24,11 @@ const AccountId expected_id{111};
 const date expected_date{2018, Feb, 25};
 const SubscriberAccountInfo expected_acc_info{expected_id,
                                               expected_number,
-                                              expected_date};
+                                              expected_date,
+                                              30};
 // account_info_str == "(111 0934356892 2018-Feb-25)"
 const std::string expected_account_info_str{"(111 " + expected_number_str +
-                                            " 2018-Feb-25)"};
+                                            " 2018-Feb-25 30)"};
 
 const CallInfo expected_call_info{
     expected_id,
