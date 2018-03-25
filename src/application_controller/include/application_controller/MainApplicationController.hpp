@@ -7,6 +7,12 @@
 
 #include "data_types/PhoneNumber.hpp"
 
+/**
+ * @brief structs, defined with this macro come with a few handy "extensions"
+ * out-of-the-box: they can be (when certain conditions are met) automatically
+ * serialized/deserialized, compared etc. So I usually tend to define structures
+ * that are going to be read from/written to files using this macro.
+ */
 // clang-format off
 BOOST_FUSION_DEFINE_STRUCT(
     (MobileBillingSystem)(ApplicationLogic), ParsablePartOfControllerConfig,
@@ -40,6 +46,17 @@ public:
 class MainApplicationController
 {
 public:
+    /**
+     * @brief This method's job is to execute the single functional requirement
+     * of the appliction: calculate call prices using defined calculation rules
+     * @param config influences different calculation parameters
+     * @param call_info_records_filename file that contains serialized call
+     * info records
+     * @param subscriber_accounts_info_records_filename file containing
+     * serialized accounts information records
+     * @param output_filename calculated prices for each call will be written
+     * (simply line-by-line) in this file
+     */
     static void calculateCallsPrices(
         const ControllerConfig& config,
         const std::string& call_info_records_filename,

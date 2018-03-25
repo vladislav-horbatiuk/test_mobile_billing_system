@@ -11,6 +11,13 @@ namespace BusinessLogic {
 class FreeMinutesAccounterComposite : public IFreeMinutesAccounter
 {
 public:
+    /**
+     * @brief Composite free minutes accounter - simply executes every
+     * composed accounter in order
+     * @tparam TFreeMinutesAccounters type of composed accounters'
+     * @param accounters composed accounters' objects; they won't be owned,
+     * it is your job to correctly manage their lifetime
+     */
     template <class... TFreeMinutesAccounters>
     explicit FreeMinutesAccounterComposite(
         TFreeMinutesAccounters&&... accounters)

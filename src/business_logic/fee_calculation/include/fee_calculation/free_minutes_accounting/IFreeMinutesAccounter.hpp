@@ -26,6 +26,13 @@ class IFreeMinutesAccounter
 public:
     virtual ~IFreeMinutesAccounter() = default;
 
+    /**
+     * @brief Check call & account info for possible sources of free minutes -
+     * and subtract such free minutes from total call duration
+     * @param call_duration total call duration
+     * @param call_info
+     * @param caller_info
+     */
     virtual void accountForFreeMinutes(
         CallDurationInMinutes& call_duration,
         const DataTypes::CallInfo& call_info,

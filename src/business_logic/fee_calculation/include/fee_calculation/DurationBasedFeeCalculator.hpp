@@ -15,6 +15,14 @@ namespace BusinessLogic {
 class DurationBasedFeeCalculator : public IFeeCalculator
 {
 public:
+    /**
+     * @brief Calculates call's fee depending on call's duration.
+     * @param home_network_minute_price fee per 1 minute inside home network
+     * @param outside_home_network_minute_price -"- outside home network
+     * @param free_minutes_accounter entity that is responsible for removing
+     * free minutes from total call's duration; calculator won't own this
+     * entity, so it's your job to correctly manage objects' lifetimes
+     */
     explicit DurationBasedFeeCalculator(
         const Price& home_network_minute_price,
         const Price& outside_home_network_minute_price,

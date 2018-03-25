@@ -9,6 +9,13 @@ namespace BusinessLogic {
 class FeeCalculatorComposite : public IFeeCalculator
 {
 public:
+    /**
+     * @brief Composite fee calculator - simply sums up all fees from composed
+     * calculators
+     * @tparam TCalculators composed calculators' types
+     * @param calculators composed calculators' objects - they are not owned
+     * by this object, it is your job to correctly manage their lifetime
+     */
     template <class... TCalculators>
     explicit FeeCalculatorComposite(TCalculators&&... calculators)
     {
