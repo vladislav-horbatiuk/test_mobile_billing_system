@@ -77,7 +77,8 @@ void MainApplicationController::calculateCallsPrices(
                 err_ss << call_info;
                 throw std::runtime_error(err_ss.str());
             }
-            os << final_fee_calc.calculateFee(info, acc_info_it->second);
+            os << final_fee_calc.calculateFee(info, acc_info_it->second)
+               << std::endl;
         };
     Utils::parseFileApplyingFunctor<CallInfo>(
         call_info_records_filename, call_info_parsing_functor);

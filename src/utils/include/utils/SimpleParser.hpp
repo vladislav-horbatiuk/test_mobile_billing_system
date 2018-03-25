@@ -7,6 +7,15 @@ namespace MobileBillingSystem {
 
 namespace Utils {
 
+inline void skipCommentedLines(std::istream& is)
+{
+    while ('#' == is.peek() || '\n' == is.peek())
+    {
+        std::string dummy;
+        std::getline(is, dummy);
+    }
+}
+
 /**
  * @brief Parse file by iteratively streaming its contents into some object and
  * calling passed in functor on the resulting object, until EOF is reached.
@@ -24,9 +33,11 @@ void parseFileApplyingFunctor(const std::string& file_path, TFunctor&& functor)
         throw std::runtime_error("Failed to open file at path: " + file_path);
     }
     T val;
+    skipCommentedLines(is);
     while (is >> val)
     {
         functor(val);
+        skipCommentedLines(is);
     }
 }
 
